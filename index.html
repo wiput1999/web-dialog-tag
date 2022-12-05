@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dialog Test</title>
+</head>
+
+<body>
+    <button id="showButton">Show Dialog</button>
+
+    <dialog id="dialog">
+        <form method="dialog">
+            Test Dialog<br />
+            <button value="cancel">Cancel</button>
+        </form>
+    </dialog>
+
+    <script type="module">
+        const dialog = document.getElementById("dialog");
+        const showButton = document.getElementById("showButton");
+
+        showButton.addEventListener("click", () => {
+            if (typeof dialog.showModal === "function") {
+                dialog.showModal();
+            } else {
+                alert("Browser not support dialog tag");
+            }
+        });
+    </script>
+</body>
+
+</html>
